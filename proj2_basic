@@ -1,0 +1,45 @@
+//Initializes the queue system, setting up the initial state of the BST. You may initialize the BST by adding the root node. Return 0 on success.
+long mailbox_init(void) {
+    // Implementation code.
+}
+
+//Shuts down the queue system, deleting all existing queues and any messages contained therein. Returns 0 on success.
+long mailbox_shutdown(void) {
+    // Implementation code.
+}
+
+//Creates a new queue with the given id if it does not already exist (no duplicates are allowed). Returns 0 on success or an appropriate error on failure. If  a negative id or an id equal to or greater than (264 - 1) is passed, this is considered an invalid ID and an appropriate error shall be returned.
+long mailbox_create(unsigned long id) {
+    // Implementation code.
+}
+
+// Deletes the queue identified by id if it exists. If the queue has any messages stored in it, they should be deleted. Returns 0 on success or an appropriate error code on failure.
+long mailbox_destroy(unsigned long id){
+    // Implementation code.
+}
+
+// Sends a new message to the queue identified by id if it exists. The message shall be read from the user-space pointer msg and shall be len bytes long. Returns 0 on success or an appropriate error code on failure.
+long mailbox_send(unsigned long id, unsigned char __user *msg, long len) {
+    // Implementation code.
+}
+
+//Reads the first message that is in the mailbox identified by id if it exists, storing either the entire length of the message or len bytes to the user-space pointer msg, whichever is less. The entire message is then removed from the mailbox (even if len was less than the total length of the message). Returns the number of bytes copied to the user space pointer on success or an appropriate error code on failure.
+long mailbox_recv(unsigned long id, unsigned char __user *msg, long len): {
+    // Implementation code.
+}
+//Deletes the oldest added message in the mailbox identified by id if it exists. This is a FIFO data structure - hence why we are deleting the oldest message. HINT: Keep in mind all the things you have to do for this one - it's not just a matter of just deleting a node in the queue. What other data within your mailbox data structure (not the BST data structure, just one single mailbox) gets affected by the deletion other than just the message node in the FIFO queue? An appropriate return code is issued if the queue is empty or does not exist.
+long mailbox_delete(unsigned long id): {
+    // Implementation code.
+}
+
+
+ 
+//Returns the number of messages in the queue to the system log identified by id if it exists. Returns an appropriate error code on failure.
+long message_count(unsigned long id): {
+    // Implementation code.
+}
+
+// Retrieves the length (in bytes) of the oldest message pending in the mailbox identified by id, if it exists. Returns the number of bytes in the oldest pending message in the mailbox on success, or an appropriate error code on failure.
+long message_length(unsigned long id):{
+    // Implementation code.
+}
