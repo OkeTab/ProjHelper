@@ -1,0 +1,17 @@
+cd /usr
+sudo apt-get remove linux-image-5.15.67*
+cd /usr/src
+sudo dpkg -i linux-image-5.15.67+_5.15.67+-1_amd64.deb
+sudo dpkg -i linux-headers-5.15.67+_5.15.67+-1_amd64.deb
+sudo dpkg -i linux-libc-dev_5.15.67+-1_amd64.deb
+sudo reboot
+
+cd /usr/src/project3
+git init .
+mkdir chess
+touch chess/README
+git add chess
+git commit -m "Initial repository setup"
+git branch -M main
+git remote add origin git@github.com:UMBC-CMSC421/project3-GITHUBUSERNAMEGOESHERE.git
+git push -u origin main
